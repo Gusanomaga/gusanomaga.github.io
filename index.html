@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eduardo Sánchez | Ingeniero de Sistemas & Full-stack Developer</title>
-    <!-- Tailwind CSS CDN para maquetado rápido -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        /* Definimos la tipografía y suavizado de scroll para animaciones */
         html { scroll-behavior: smooth; }
         body { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
     </style>
 </head>
 <body class="bg-[#111] text-gray-100 font-sans antialiased overflow-x-hidden">
 
-    <!-- Fondo con Degradado Suave (Fijo) -->
+    <!-- Fondo Degradado -->
     <div class="fixed inset-0 z-0 bg-radial-at-t from-[#14B8A6]/10 to-[#111] via-[#111]"></div>
 
     <div class="relative z-10">
-
-        <!-- HEADER / HERO SECTION -->
+        <!-- HEADER -->
         <header class="max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center justify-between">
             <div class="md:w-3/5 text-center md:text-left">
                 <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-3 tracking-tight">
@@ -35,13 +32,12 @@
                     <a href="#proyectos" class="bg-teal-500 hover:bg-teal-600 text-[#111] font-bold px-8 py-4 rounded-xl transition duration-300 transform hover:scale-105 shadow-lg shadow-teal-500/20">
                         Ver Proyectos
                     </a>
-                    <a href="mailto:tu-correo@email.com" class="border border-gray-700 hover:border-teal-400 text-gray-300 hover:text-teal-400 px-8 py-4 rounded-xl transition duration-300">
+                    <a href="mailto:sanchezeduardoenrique27@gmail.com" class="border border-gray-700 hover:border-teal-400 text-gray-300 hover:text-teal-400 px-8 py-4 rounded-xl transition duration-300">
                         Contactar
                     </a>
                 </div>
             </div>
             
-            <!-- Avatar Monograma con Brillo Pulsante -->
             <div class="mt-16 md:mt-0 md:w-2/5 flex justify-center md:justify-end relative">
                 <div class="absolute -inset-2 bg-gradient-to-tr from-teal-400 to-blue-500 rounded-full opacity-30 blur-2xl animate-pulse"></div>
                 <div class="w-48 h-48 rounded-full bg-gradient-to-tr from-teal-500 to-blue-600 flex items-center justify-center text-5xl font-extrabold text-white shadow-xl shadow-teal-500/30 relative z-10">
@@ -50,7 +46,7 @@
             </div>
         </header>
 
-        <!-- SECCIÓN DE PROYECTOS DESTACADOS -->
+        <!-- PROYECTOS -->
         <main id="proyectos" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800/60 mt-10">
             <h2 class="text-4xl font-bold text-white mb-16 text-center md:text-left tracking-tight">
                 Proyectos Destacados
@@ -58,77 +54,198 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 
-                <!-- Tarjeta de Proyecto 1 (Basada en la maqueta) -->
+                <!-- Proyecto 1: DadosGo (Market Devis) -->
                 <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
-                    <!-- Brillo interno en hover -->
                     <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-
                     <div class="p-8 relative z-10">
                         <div class="flex justify-between items-start mb-6">
-                            <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">
-                                CRM Abogados
-                            </h3>
-                            <span class="text-xs font-semibold bg-teal-500/10 text-teal-400 px-3 py-1.5 rounded-full border border-teal-500/20">
-                                Finalizado
-                            </span>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">DadosGo</h3>
+                            <span class="text-xs font-semibold bg-teal-500/10 text-teal-400 px-3 py-1.5 rounded-full border border-teal-500/20">Full-Stack / Delivery</span>
                         </div>
                         <p class="text-gray-400 text-sm mb-8 leading-relaxed">
-                            Sistema integral para la gestión de casos legales, control de expedientes y seguimiento de clientes. Optimizado para mejorar el flujo de trabajo del equipo técnico y legal.
+                            Reestructuración integral de una plataforma de delivery masiva en 4 entornos web (Público, Admin, Usuarios, Aliados). Optimización del backend para gestión de roles, pasarela de pagos (MercadoPago), autenticación por login telefónico y depuración completa de bases de datos maestras.
                         </p>
-                        <!-- Tecnologías con badget -->
                         <div class="flex flex-wrap gap-2.5 mb-6">
-                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800 flex items-center gap-1.5">
-                                PHP (Laravel)
-                            </span>
-                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800 flex items-center gap-1.5">
-                                HeidiSQL
-                            </span>
-                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800 flex items-center gap-1.5">
-                                Git
-                            </span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">PHP (Laravel)</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">MercadoPago</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">VPS Deployment</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">UX/UI Optimization</span>
                         </div>
                     </div>
                     <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
-                        <span class="text-xs text-gray-600">Repositorio Privado</span>
-                        <a href="#" class="text-sm font-semibold text-teal-400 hover:text-teal-300 flex items-center gap-1.5 group-hover:gap-2 transition-all">
-                            Ver Detalles <span>&rarr;</span>
-                        </a>
+                        <span class="text-xs text-gray-600">Market Devis</span>
+                        <span class="text-xs text-teal-400/80 font-medium">Entregado al 100%</span>
                     </div>
                 </div>
 
-                <!-- Tarjeta de Proyecto 2 (Marcador para Sisu Technology u otro) -->
+                <!-- Proyecto 2: CPAbogados (Market Devis) -->
                 <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
-                     <!-- Brillo interno en hover -->
                     <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-
                     <div class="p-8 relative z-10">
                         <div class="flex justify-between items-start mb-6">
-                            <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">
-                                Sisu Technology
-                            </h3>
-                            <span class="text-xs font-semibold bg-teal-500/10 text-teal-400 px-3 py-1.5 rounded-full border border-teal-500/20">
-                                Finalizado
-                            </span>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">CPAbogados Infrastructure</h3>
+                            <span class="text-xs font-semibold bg-teal-500/10 text-teal-400 px-3 py-1.5 rounded-full border border-teal-500/20">DevOps & Cloud</span>
                         </div>
                         <p class="text-gray-400 text-sm mb-8 leading-relaxed">
-                            Desarrollo y optimización de plataforma web corporativa. Integración de elementos interactivos y mejora en el rendimiento general del sitio para potenciar la presencia digital.
+                            Ingeniería de servidores para un ecosistema multisitio. Gestión de migración DNS a Cloudflare con reglas WAF, automatización de certificados SSL Certbot (Let's Encrypt), auditoría técnica de zonas de correo corporativo (Zoho Mail) y resolución de fallos críticos mediante reconfiguración del cortafuegos UFW y Apache en entornos Linux.
                         </p>
                         <div class="flex flex-wrap gap-2.5 mb-6">
-                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800 flex items-center gap-1.5">
-                                WordPress
-                            </span>
-                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800 flex items-center gap-1.5">
-                                Elementor
-                            </span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">DevOps / SysAdmin</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Cloudflare WAF</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Contabo VPS</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Apache & SSL</span>
                         </div>
                     </div>
                     <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
-                        <span class="text-xs text-gray-600">Sitio en Producción</span>
-                        <a href="#" class="text-sm font-semibold text-teal-400 hover:text-teal-300 flex items-center gap-1.5 group-hover:gap-2 transition-all">
-                            Ver Proyecto <span>&rarr;</span>
-                        </a>
+                        <span class="text-xs text-gray-600">Market Devis</span>
+                        <span class="text-xs text-teal-400/80 font-medium">Infraestructura Lista</span>
                     </div>
                 </div>
+
+                <!-- Proyecto 3: Tesis Unimar -->
+                <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
+                    <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="p-8 relative z-10">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">Gestión Médica</h3>
+                            <span class="text-xs font-semibold bg-teal-500/10 text-teal-400 px-3 py-1.5 rounded-full border border-teal-500/20">Investigación</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                            Diseño y desarrollo de una plataforma web integral para la gestión médica y sanitaria. Enfocado en la resolución técnica para la administración de pacientes, control de citas y expedientes clínicos automatizados.
+                        </p>
+                        <div class="flex flex-wrap gap-2.5 mb-6">
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">PHP (Laravel)</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Vue.js</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Bootstrap</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">SQL Server</span>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
+                        <span class="text-xs text-gray-600">Universidad de Margarita</span>
+                        <span class="text-xs text-teal-400/80 font-medium">Tesis de Grado</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4: JavyRocks -->
+                <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
+                    <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="p-8 relative z-10">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">CRM Logística Terrestre</h3>
+                            <span class="text-xs font-semibold bg-teal-500/10 text-teal-400 px-3 py-1.5 rounded-full border border-teal-500/20">Corporativo</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                            Mantenimiento y desarrollo de módulos críticos para una plataforma CRM masiva orientada al transporte de carga y gestión de camiones en Colombia. Optimización de lógica de negocio en el backend y control de despachos.
+                        </p>
+                        <div class="flex flex-wrap gap-2.5 mb-6">
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">.NET (C#)</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Angular</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">JavaScript</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">SQL Server</span>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
+                        <span class="text-xs text-gray-600">JavyRocks (Colombia)</span>
+                        <span class="text-xs text-teal-400/80 font-medium">Repositorio Privado</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 5: Simalfar (Grupo Red M) -->
+                <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
+                    <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="p-8 relative z-10">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">Simalfar</h3>
+                            <span class="text-xs font-semibold bg-teal-500/10 text-teal-400 px-3 py-1.5 rounded-full border border-teal-500/20">Internacional</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                            Desarrollo e implementación de paneles administrativos avanzados con control de acceso seguro (RBAC) para un cliente de gran envergadura en España. Creación de flujos de trabajo eficientes optimizados bajo entornos Laragon.
+                        </p>
+                        <div class="flex flex-wrap gap-2.5 mb-6">
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">PHP (Laravel)</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Bootstrap</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">MySQL</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Laragon</span>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
+                        <span class="text-xs text-gray-600">Grupo Red M (España)</span>
+                        <span class="text-xs text-teal-400/80 font-medium">Panel Administrativo</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 6: Smart One & Multi-plataformas (Nexo-One) -->
+                <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
+                    <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="p-8 relative z-10">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">Smart One & E-Systems</h3>
+                            <span class="text-xs font-semibold bg-teal-500/10 text-teal-400 px-3 py-1.5 rounded-full border border-teal-500/20">Multi-proyecto</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                            Desarrollo Full-Stack en paralelo de múltiples soluciones de software empresariales para el mercado europeo. Gestión de código heredado, configuración de entornos virtuales robustos con Vagrant e integración de interfaces reactivas.
+                        </p>
+                        <div class="flex flex-wrap gap-2.5 mb-6">
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">PHP (Laravel/Yii)</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Vue.js</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Node.js</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Vagrant</span>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
+                        <span class="text-xs text-gray-600">Nexo-One Consulting (España)</span>
+                        <span class="text-xs text-teal-400/80 font-medium">Entorno Controlado</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 7: Vkbmarketing (Market Devis) -->
+                <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
+                    <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="p-8 relative z-10">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">Vkbmarketing</h3>
+                            <span class="text-xs font-semibold bg-teal-500/10 text-teal-400 px-3 py-1.5 rounded-full border border-teal-500/20">Refactor / Web Cleanup</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                            Depuración estructural profunda de una plataforma de agencia para mejorar la velocidad y el SEO. Remoción completa de módulos de e-commerce y pasarelas obsoletas, corrección de sistemas multiidioma, e implementación de redireccionamientos y marcas dinámicas en el backend.
+                        </p>
+                        <div class="flex flex-wrap gap-2.5 mb-6">
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">PHP</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Localization</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">VPS Deployment</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Architecture Cleanup</span>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
+                        <span class="text-xs text-gray-600">Market Devis</span>
+                        <span class="text-xs text-teal-400/80 font-medium">Entregado al 100%</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 8: Apex (Desarrollo CMS & UI/UX) -->
+                <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
+                    <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="p-8 relative z-10">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">Desarrollo Web CMS & UI/UX</h3>
+                            <span class="text-xs font-semibold bg-teal-500/10 text-teal-400 px-3 py-1.5 rounded-full border border-teal-500/20">Freelance</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                            Desarrollo, maquetación y optimización de plataformas web corporativas y sitios comerciales. Especializado en la traducción exacta de prototipos interactivos desde Figma, configuración avanzada de ecosistemas de plugins y personalización de rendimiento.
+                        </p>
+                        <div class="flex flex-wrap gap-2.5 mb-6">
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">WordPress</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Elementor</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Figma</span>
+                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">WooCommerce</span>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
+                        <span class="text-xs text-gray-600">Apex (Venezuela)</span>
+                        <span class="text-xs text-teal-400/80 font-medium">Sitios en Producción</span>
+                    </div>
+                </div>
+
             </div>
         </main>
 
@@ -136,8 +253,6 @@
         <footer class="max-w-7xl mx-auto px-6 py-10 text-center border-t border-gray-800/60 mt-20 text-sm text-gray-600">
             <p>&copy; 2026 Eduardo Sánchez. Desarrollado con Tailwind CSS & alojado en GitHub Pages.</p>
         </footer>
-
     </div>
-
 </body>
 </html>
