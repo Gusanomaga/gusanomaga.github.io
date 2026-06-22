@@ -16,6 +16,7 @@
     <div class="fixed inset-0 z-0 bg-radial-at-t from-[#14B8A6]/10 to-[#111] via-[#111]"></div>
 
     <div class="relative z-10">
+        
         <!-- HEADER -->
         <header class="max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center justify-between">
             <div class="md:w-3/5 text-center md:text-left">
@@ -25,15 +26,21 @@
                 <p class="text-2xl text-teal-400/90 font-semibold mb-8 tracking-wide">
                     Ingeniero de Sistemas & Full-stack Developer
                 </p>
-                <p class="text-gray-400 text-lg max-w-2xl mx-auto md:mx-0 mb-10 leading-relaxed">
-                    Especializado en construir aplicaciones web robustas y escalables. Apasionado por resolver problemas complejos mediante código limpio y arquitectura eficiente.
-                </p>
                 <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                    <a href="#proyectos" class="bg-teal-500 hover:bg-teal-600 text-[#111] font-bold px-8 py-4 rounded-xl transition duration-300 transform hover:scale-105 shadow-lg shadow-teal-500/20">
-                        Ver Proyectos
+                    <a href="pdf/CV_Eduardo_Sanchez.pdf" download="CV_Eduardo_Sanchez.pdf" class="bg-teal-500 hover:bg-teal-600 text-[#111] font-bold px-6 py-4 rounded-xl transition duration-300 transform hover:scale-105 shadow-lg shadow-teal-500/20 flex items-center gap-2">
+                        <span>📥</span> Descargar CV (PDF)
                     </a>
-                    <a href="#sobre-mi" class="border border-gray-700 hover:border-teal-400 text-gray-300 hover:text-teal-400 px-8 py-4 rounded-xl transition duration-300">
+                    <a href="#sobre-mi" class="border border-gray-700 hover:border-teal-400 text-gray-300 hover:text-teal-400 px-6 py-4 rounded-xl transition duration-300">
                         Sobre Mí
+                    </a>
+                    <a href="#educacion" class="border border-gray-700 hover:border-teal-400 text-gray-300 hover:text-teal-400 px-6 py-4 rounded-xl transition duration-300">
+                        Educación
+                    </a>
+                    <a href="#habilidades" class="border border-gray-700 hover:border-teal-400 text-gray-300 hover:text-teal-400 px-6 py-4 rounded-xl transition duration-300">
+                        Tecnologías
+                    </a>
+                    <a href="#proyectos" class="border border-gray-700 hover:border-teal-400 text-gray-300 hover:text-teal-400 px-6 py-4 rounded-xl transition duration-300">
+                        Proyectos
                     </a>
                 </div>
             </div>
@@ -47,75 +54,164 @@
         </header>
 
         <!-- SOBRE MÍ -->
-        <section id="sobre-mi" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800/60 mt-10">
+        <section id="sobre-mi" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800/60">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-                <!-- Columna Izquierda: Foto -->
-                <div class="lg:col-span-5">
-                    <img 
-                        src="imagenes/Perfil Edu.jpeg" 
-                        alt="Eduardo Sánchez" 
-                        class="w-full h-auto rounded-3xl shadow-2xl border border-gray-800 hover:scale-[1.02] transition duration-500 object-cover"
-                    >
+                
+                <div class="lg:col-span-5 flex justify-center">
+                    <img src="imagenes/perfil.jpg" alt="Eduardo Sánchez" class="w-full max-w-md h-auto rounded-3xl shadow-2xl border border-gray-800 hover:scale-[1.02] transition duration-500 object-cover">
                 </div>
                 
-                <!-- Columna Derecha: Contenido -->
-                <div class="lg:col-span-7 space-y-8">
-                    <div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">Carta de Presentación</h2>
-                        <p class="leading-relaxed text-gray-300/90 text-lg mb-8">
-                            Soy Ingeniero de Sistemas y Full-stack Developer con una sólida experiencia en el desarrollo de soluciones web escalables y robustas. Me especializo en arquitectura backend, desarrollo frontend moderno y gestión de infraestructura cloud. Mi enfoque se centra en crear aplicaciones eficientes que resuelvan problemas reales, combinando código limpio con las mejores prácticas de la industria. Estoy comprometido con el aprendizaje continuo y la entrega de soluciones de alta calidad que impacten positivamente en los usuarios y las empresas.
-                        </p>
-                    </div>
+                <div class="lg:col-span-7">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">Carta de Presentación</h2>
+                    <p class="text-gray-300/90 text-lg leading-relaxed mb-8">
+                        Como Ingeniero de Sistemas, me especializo en la construcción de soluciones web escalables y robustas, combinando una sólida capacidad de desarrollo Full-stack con experiencia en gestión de infraestructura cloud. Mi enfoque técnico se centra en la eficiencia, la seguridad y el despliegue optimizado, siempre buscando aportar valor tangible a los proyectos mediante código limpio y arquitectura eficiente adaptada a las necesidades reales del negocio.
+                    </p>
                     
-                    <!-- Datos Personales e Idiomas -->
+                    <!-- Tarjeta de Datos Personales -->
                     <div class="bg-[#161616] border border-gray-800/80 p-8 rounded-3xl shadow-xl">
-                        <h3 class="text-xl font-bold text-white mb-6 tracking-tight">Datos Personales e Idiomas</h3>
-                        <div class="space-y-4">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                            <h3 class="text-xl font-bold text-teal-400 flex items-center gap-2">
+                                <span>📋</span> Datos Personales e Idiomas
+                            </h3>
+                            <a href="pdf/CV_Eduardo_Sanchez.pdf" download="CV_Eduardo_Sanchez.pdf" class="text-xs bg-teal-500/10 text-teal-400 hover:bg-teal-500 hover:text-[#111] px-4 py-2 rounded-xl border border-teal-500/20 transition duration-300 font-semibold flex items-center gap-1.5">
+                                <span>📥</span> Guardar CV (PDF)
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
                             <div class="flex items-center gap-3">
-                                <span class="text-teal-400">📧</span>
-                                <span class="text-gray-300">sanchezeduardoenrique27@gmail.com</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-teal-400">📱</span>
-                                <span class="text-gray-300">+58 424-8362178</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-teal-400">💼</span>
-                                <a href="https://www.linkedin.com/in/eduardo-enrique-sanchez-garcia" target="_blank" class="text-gray-300 hover:text-teal-400 transition duration-300">www.linkedin.com/in/eduardo-enrique-sanchez-garcia</a>
+                                <span>📧</span> <span class="truncate">sanchezeduardoenrique27@gmail.com</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <span class="text-teal-400">🐙</span>
-                                <a href="https://github.com/Gusanomaga" target="_blank" class="text-gray-300 hover:text-teal-400 transition duration-300">https://github.com/Gusanomaga</a>
+                                <span>📱</span> <span>+58 424-8362178</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <span class="text-teal-400">📍</span>
-                                <span class="text-gray-300">Porlamar, Nueva Esparta, Venezuela</span>
+                                <span>💼</span> <a href="https://www.linkedin.com/in/eduardo-enrique-sanchez-garcia" target="_blank" class="text-gray-300 hover:text-teal-400 transition underline decoration-gray-700">LinkedIn Profesional</a>
                             </div>
-                            <div class="flex items-center gap-3 pt-4 border-t border-gray-800/60">
-                                <span class="text-teal-400">🌐</span>
-                                <div class="flex gap-4">
-                                    <span class="text-gray-300">Español (Fluido)</span>
-                                    <span class="text-gray-600">|</span>
-                                    <span class="text-gray-300">Inglés (B1)</span>
-                                </div>
+                            <div class="flex items-center gap-3">
+                                <span>🐙</span> <a href="https://github.com/Gusanomaga" target="_blank" class="text-gray-300 hover:text-teal-400 transition underline decoration-gray-700">GitHub Profile</a>
                             </div>
+                            <div class="flex items-center gap-3 md:col-span-2">
+                                <span>📍</span> <span>Porlamar, Nueva Esparta, Venezuela</span>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-800/60 mt-6 pt-4 flex gap-6 text-sm text-gray-400">
+                            <div>🗣️ <b>Español:</b> Fluido</div>
+                            <div>🇺🇸 <b>Inglés:</b> B1</div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- PROYECTOS -->
-        <main id="proyectos" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800/60 mt-10">
+        <!-- FORMACIÓN ACADÉMICA -->
+        <section id="educacion" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800/60">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 tracking-tight text-center md:text-left">
+                Formación Académica
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="bg-[#161616] border border-gray-800/80 p-8 rounded-3xl shadow-xl relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-teal-500"></div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-teal-400 block mb-2">Educación Superior</span>
+                    <h3 class="text-2xl font-bold text-white mb-1">Ingeniería de Sistemas</h3>
+                    <p class="text-gray-400 font-medium mb-4">Universidad de Margarita (UNIMAR)</p>
+                    
+                    <div class="mt-4 p-4 bg-[#111] rounded-2xl border border-gray-800/60">
+                        <h4 class="text-sm font-bold text-teal-400 uppercase tracking-wide mb-1">Proyecto de Tesis Destacado:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            <b>Gestión Médica:</b> Diseño y desarrollo de una plataforma web integral para la administración clínica, control automatizado de expedientes sanitarios y agendamiento de citas médicas. Implementada eficientemente utilizando <b>PHP (Laravel), Vue.js y SQL Server</b>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-[#161616] border border-gray-800/80 p-8 rounded-3xl shadow-xl relative overflow-hidden group flex flex-col justify-center">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-gray-700"></div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 block mb-2">Educación Media</span>
+                    <h3 class="text-2xl font-bold text-white mb-1">Bachiller en Ciencias</h3>
+                    <p class="text-gray-400 font-medium">Instituto Educacional Andrés Bello</p>
+                    <p class="text-sm text-gray-500 mt-4 leading-relaxed">
+                        Formación académica de base con enfoque en ciencias lógicas, matemáticas y bases fundamentales de investigación técnica.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HABILIDADES TÉCNICAS (AMPLIADA Y OPTIMIZADA) -->
+        <section id="habilidades" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800/60">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 tracking-tight text-center md:text-left">
+                Habilidades Técnicas & Tech Stack
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Backend Core -->
+                <div class="bg-[#161616]/60 border border-gray-800 p-6 rounded-2xl hover:border-teal-500/30 transition duration-300">
+                    <div class="text-teal-400 text-2xl mb-4">⚙️</div>
+                    <h3 class="text-lg font-bold text-white mb-3">Backend Development</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">PHP (Laravel / Yii)</span>
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">C# (.NET Core)</span>
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">Node.js</span>
+                        <span class="text-xs bg-[#111] text-teal-400/90 px-2.5 py-1 rounded-md border border-teal-900/40 font-medium">Python (Scripting)</span>
+                        <span class="text-xs bg-[#111] text-gray-400 px-2.5 py-1 rounded-md border border-gray-800/80">Programación POO</span>
+                    </div>
+                </div>
+
+                <!-- Frontend Core -->
+                <div class="bg-[#161616]/60 border border-gray-800 p-6 rounded-2xl hover:border-teal-500/30 transition duration-300">
+                    <div class="text-teal-400 text-2xl mb-4">💻</div>
+                    <h3 class="text-lg font-bold text-white mb-3">Frontend & CMS</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">JavaScript (ES6+)</span>
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">React / Vue.js</span>
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">Tailwind CSS / Bootstrap</span>
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">HTML5 / CSS3 Layouts</span>
+                        <span class="text-xs bg-[#111] text-teal-400/90 px-2.5 py-1 rounded-md border border-teal-900/40 font-medium">WordPress & Elementor</span>
+                        <span class="text-xs bg-[#111] text-teal-400/90 px-2.5 py-1 rounded-md border border-teal-900/40 font-medium">WooCommerce</span>
+                    </div>
+                </div>
+
+                <!-- Data & Storage -->
+                <div class="bg-[#161616]/60 border border-gray-800 p-6 rounded-2xl hover:border-teal-500/30 transition duration-300">
+                    <div class="text-teal-400 text-2xl mb-4">🗄️</div>
+                    <h3 class="text-lg font-bold text-white mb-3">Bases de Datos (SQL)</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">Microsoft SQL Server</span>
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">MySQL / MariaDB</span>
+                        <span class="text-xs bg-[#111] text-teal-400/90 px-2.5 py-1 rounded-md border border-teal-900/40 font-medium">PostgreSQL</span>
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">HeidiSQL Manager</span>
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">SQLite</span>
+                    </div>
+                </div>
+
+                <!-- DevOps & SysAdmin -->
+                <div class="bg-[#161616]/60 border border-gray-800 p-6 rounded-2xl hover:border-teal-500/30 transition duration-300">
+                    <div class="text-teal-400 text-2xl mb-4">🛠️</div>
+                    <h3 class="text-lg font-bold text-white mb-3">Infraestructura & Tools</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">Git & GitHub Repos</span>
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">Linux VPS (Ubuntu/Apache)</span>
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">Cloudflare WAF / SSL DNS</span>
+                        <span class="text-xs bg-[#111] text-teal-400/90 px-2.5 py-1 rounded-md border border-teal-900/40 font-medium">Devin Desktop / Windsurf</span>
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">VS Code / Laragon</span>
+                        <span class="text-xs bg-[#111] text-gray-300 px-2.5 py-1 rounded-md border border-gray-800/80">Composer / NPM / Vite</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROYECTOS DESTACADOS -->
+        <main id="proyectos" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800/60">
             <h2 class="text-4xl font-bold text-white mb-16 text-center md:text-left tracking-tight">
                 Proyectos Destacados
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 
-                <!-- Proyecto 1: DadosGo (Market Devis) -->
+                <!-- Proyecto: DadosGo -->
                 <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
-                    <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
                     <div class="p-8 relative z-10">
                         <div class="flex justify-between items-start mb-6">
                             <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">DadosGo</h3>
@@ -128,18 +224,16 @@
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">PHP (Laravel)</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">MercadoPago</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">VPS Deployment</span>
-                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">UX/UI Optimization</span>
                         </div>
                     </div>
-                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
-                        <span class="text-xs text-gray-600">Market Devis (Mexico)</span>
+                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center">
+                        <span class="text-xs text-gray-600">Market Devis</span>
                         <span class="text-xs text-teal-400/80 font-medium">Entregado al 100%</span>
                     </div>
                 </div>
 
-                <!-- Proyecto 2: CPAbogados (Market Devis) -->
+                <!-- Proyecto: CPAbogados Infrastructure -->
                 <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
-                    <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
                     <div class="p-8 relative z-10">
                         <div class="flex justify-between items-start mb-6">
                             <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">CPAbogados Infrastructure</h3>
@@ -151,19 +245,17 @@
                         <div class="flex flex-wrap gap-2.5 mb-6">
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">DevOps / SysAdmin</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Cloudflare WAF</span>
-                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Contabo VPS</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Apache & SSL</span>
                         </div>
                     </div>
-                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
-                        <span class="text-xs text-gray-600">Market Devis (Mexico)</span>
+                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center">
+                        <span class="text-xs text-gray-600">Market Devis</span>
                         <span class="text-xs text-teal-400/80 font-medium">Infraestructura Lista</span>
                     </div>
                 </div>
 
-                <!-- Proyecto 3: Tesis Unimar -->
+                <!-- Proyecto: Gestión Médica -->
                 <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
-                    <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
                     <div class="p-8 relative z-10">
                         <div class="flex justify-between items-start mb-6">
                             <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">Gestión Médica</h3>
@@ -175,19 +267,17 @@
                         <div class="flex flex-wrap gap-2.5 mb-6">
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">PHP (Laravel)</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Vue.js</span>
-                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Bootstrap</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">SQL Server</span>
                         </div>
                     </div>
-                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
+                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center">
                         <span class="text-xs text-gray-600">Universidad de Margarita</span>
                         <span class="text-xs text-teal-400/80 font-medium">Tesis de Grado</span>
                     </div>
                 </div>
 
-                <!-- Proyecto 4: JavyRocks -->
+                <!-- Proyecto: CRM Logística Terrestre -->
                 <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
-                    <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
                     <div class="p-8 relative z-10">
                         <div class="flex justify-between items-start mb-6">
                             <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">CRM Logística Terrestre</h3>
@@ -199,19 +289,17 @@
                         <div class="flex flex-wrap gap-2.5 mb-6">
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">.NET (C#)</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Angular</span>
-                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">JavaScript</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">SQL Server</span>
                         </div>
                     </div>
-                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
+                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center">
                         <span class="text-xs text-gray-600">JavyRocks (Colombia)</span>
                         <span class="text-xs text-teal-400/80 font-medium">Repositorio Privado</span>
                     </div>
                 </div>
 
-                <!-- Proyecto 5: Simalfar (Grupo Red M) -->
+                <!-- Proyecto: Simalfar -->
                 <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
-                    <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
                     <div class="p-8 relative z-10">
                         <div class="flex justify-between items-start mb-6">
                             <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">Simalfar</h3>
@@ -222,20 +310,18 @@
                         </p>
                         <div class="flex flex-wrap gap-2.5 mb-6">
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">PHP (Laravel)</span>
-                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Bootstrap</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">MySQL</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Laragon</span>
                         </div>
                     </div>
-                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
-                        <span class="text-xs text-gray-600">Grupo Red M (Venezuela)</span>
+                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center">
+                        <span class="text-xs text-gray-600">Grupo Red M (España)</span>
                         <span class="text-xs text-teal-400/80 font-medium">Panel Administrativo</span>
                     </div>
                 </div>
 
-                <!-- Proyecto 6: Smart One & Multi-plataformas (Nexo-One) -->
+                <!-- Proyecto: Smart One & E-Systems -->
                 <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
-                    <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
                     <div class="p-8 relative z-10">
                         <div class="flex justify-between items-start mb-6">
                             <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">Smart One & E-Systems</h3>
@@ -248,18 +334,16 @@
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">PHP (Laravel/Yii)</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Vue.js</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Node.js</span>
-                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Vagrant</span>
                         </div>
                     </div>
-                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
+                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center">
                         <span class="text-xs text-gray-600">Nexo-One Consulting (España)</span>
                         <span class="text-xs text-teal-400/80 font-medium">Entorno Controlado</span>
                     </div>
                 </div>
 
-                <!-- Proyecto 7: Vkbmarketing (Market Devis) -->
+                <!-- Proyecto: Vkbmarketing -->
                 <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
-                    <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
                     <div class="p-8 relative z-10">
                         <div class="flex justify-between items-start mb-6">
                             <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">Vkbmarketing</h3>
@@ -271,19 +355,17 @@
                         <div class="flex flex-wrap gap-2.5 mb-6">
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">PHP</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Localization</span>
-                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">VPS Deployment</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Architecture Cleanup</span>
                         </div>
                     </div>
-                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
-                        <span class="text-xs text-gray-600">Market Devis (Mexico)</span>
+                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center">
+                        <span class="text-xs text-gray-600">Market Devis</span>
                         <span class="text-xs text-teal-400/80 font-medium">Entregado al 100%</span>
                     </div>
                 </div>
 
-                <!-- Proyecto 8: Apex (Desarrollo CMS & UI/UX) -->
+                <!-- Proyecto: Apex -->
                 <div class="bg-[#1a1a1a]/80 border border-gray-800/60 rounded-3xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-teal-900/40 relative">
-                    <div class="absolute -inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-teal-900/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
                     <div class="p-8 relative z-10">
                         <div class="flex justify-between items-start mb-6">
                             <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition duration-300">Desarrollo Web CMS & UI/UX</h3>
@@ -296,10 +378,9 @@
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">WordPress</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Elementor</span>
                             <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">Figma</span>
-                            <span class="text-xs bg-gray-900 text-gray-400 px-3 py-1.5 rounded-lg border border-gray-800">WooCommerce</span>
                         </div>
                     </div>
-                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center relative z-10">
+                    <div class="px-8 pb-8 pt-3 border-t border-gray-800/60 flex justify-between items-center">
                         <span class="text-xs text-gray-600">Apex (Venezuela)</span>
                         <span class="text-xs text-teal-400/80 font-medium">Sitios en Producción</span>
                     </div>
