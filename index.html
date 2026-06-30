@@ -26,6 +26,7 @@
         /* ========================================
            ESTILOS DEL CARRUSEL DE PROYECTOS WORDPRESS
            Carrusel responsive con auto-play y navegación manual
+           Optimizado para rendimiento con hardware acceleration
            ======================================== */
         .seccion-proyectos {
             max-width: 7xl;
@@ -64,7 +65,9 @@
         .carrusel-track {
             display: flex;
             gap: 1.5rem;
-            transition: transform 0.5s ease-in-out;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+            transform: translateZ(0);
         }
         
         .proyecto-card {
@@ -73,8 +76,10 @@
             border: 1px solid rgba(128, 128, 128, 0.37);
             border-radius: 1.5rem;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease;
             cursor: pointer;
+            will-change: transform;
+            transform: translateZ(0);
         }
         
         .proyecto-card:hover {
@@ -87,6 +92,7 @@
             width: 100%;
             height: 200px;
             overflow: hidden;
+            background: #1a1a1a;
         }
         
         .proyecto-imagen img {
@@ -94,6 +100,8 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
+            will-change: transform;
+            transform: translateZ(0);
         }
         
         .proyecto-card:hover .proyecto-imagen img {
@@ -671,72 +679,72 @@
                         
                         <!-- Card 1 -->
                         <div class="proyecto-card">
-                            <div class="proyecto-imagen"><img src="imagenes/mesakiel.png" alt="Mesakiel"></div>
+                            <div class="proyecto-imagen"><img src="imagenes/mesakiel.png" alt="Mesakiel" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Mesakiel</h3><p class="tag-empresa">Apex</p></div>
                         </div>
                         <!-- Card 2 -->
                         <div class="proyecto-card">
-                            <div class="proyecto-imagen"><img src="imagenes/Mar_Logistic.png" alt="Mar Logistic"></div>
+                            <div class="proyecto-imagen"><img src="imagenes/Mar_Logistic.png" alt="Mar Logistic" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Mar Logistic</h3><p class="tag-empresa">Apex</p></div>
                         </div>
                         <!-- Card 3 -->
                         <div class="proyecto-card">
-                            <div class="proyecto-imagen"><img src="imagenes/Car_Capital.png" alt="Car Capital"></div>
+                            <div class="proyecto-imagen"><img src="imagenes/Car_Capital.png" alt="Car Capital" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Car Capital</h3><p class="tag-empresa">Apex</p></div>
                         </div>
                         <!-- Card 4 -->
                         <div class="proyecto-card">
-                            <div class="proyecto-imagen"><img src="imagenes/vasegurisimo.png" alt="Vasegurisimo"></div>
+                            <div class="proyecto-imagen"><img src="imagenes/vasegurisimo.png" alt="Vasegurisimo" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Vasegurisimo</h3><p class="tag-empresa">Apex</p></div>
                         </div>
                         <!-- Card 5 -->
                         <div class="proyecto-card">
-                            <div class="proyecto-imagen"><img src="imagenes/locksta.png" alt="Locksta"></div>
+                            <div class="proyecto-imagen"><img src="imagenes/locksta.png" alt="Locksta" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Locksta</h3><p class="tag-empresa">Apex</p></div>
                         </div>
                         <!-- Card 6 -->
                         <div class="proyecto-card">
-                            <div class="proyecto-imagen"><img src="imagenes/insularmet.png" alt="Insularmet"></div>
+                            <div class="proyecto-imagen"><img src="imagenes/insularmet.png" alt="Insularmet" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Insularmet</h3><p class="tag-empresa">Apex</p></div>
                         </div>
                         <!-- Card 7 -->
                         <div class="proyecto-card">
-                            <div class="proyecto-imagen"><img src="imagenes/Bodega_Taqueral.png" alt="Bodega Taqueral"></div>
+                            <div class="proyecto-imagen"><img src="imagenes/Bodega_Taqueral.png" alt="Bodega Taqueral" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Bodega Taqueral</h3><p class="tag-empresa">Apex</p></div>
                         </div>
                         <!-- Card 8 -->
                         <div class="proyecto-card">
-                            <div class="proyecto-imagen"><img src="imagenes/velocity.png" alt="Velocity"></div>
+                            <div class="proyecto-imagen"><img src="imagenes/velocity.png" alt="Velocity" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Velocity</h3><p class="tag-empresa">Apex</p></div>
                         </div>
                         <!-- Card 9 -->
                         <div class="proyecto-card">
-                            <div class="proyecto-imagen"><img src="imagenes/Mrs_Bun.png" alt="Mrs Bun"></div>
+                            <div class="proyecto-imagen"><img src="imagenes/Mrs_Bun.png" alt="Mrs Bun" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Mrs Bun</h3><p class="tag-empresa">Apex</p></div>
                         </div>
                         <!-- Card 10 -->
                         <div class="proyecto-card">
-                            <div class="proyecto-imagen"><img src="imagenes/farmadepot.png" alt="Farmadepot"></div>
+                            <div class="proyecto-imagen"><img src="imagenes/farmadepot.png" alt="Farmadepot" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Farmadepot</h3><p class="tag-empresa">Apex</p></div>
                         </div>
                         <!-- Card 11 -->
                         <div class="proyecto-card">
-                            <div class="proyecto-imagen"><img src="imagenes/Reto_Caribe.png" alt="Reto Caribe"></div>
+                            <div class="proyecto-imagen"><img src="imagenes/Reto_Caribe.png" alt="Reto Caribe" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Reto Caribe</h3><p class="tag-empresa">Apex</p></div>
                         </div>
                         <!-- Card 12 -->
                         <div class="proyecto-card">
-                            <div class="proyecto-imagen"><img src="imagenes/Luxe_Health.png" alt="Luxe Health"></div>
+                            <div class="proyecto-imagen"><img src="imagenes/Luxe_Health.png" alt="Luxe Health" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Luxe Health</h3><p class="tag-empresa">Apex</p></div>
                         </div>
                         <!-- Card 13 -->
                         <div class="proyecto-card">
-                            <div class="proyecto-imagen"><img src="imagenes/inmuebleraria.png" alt="Inmuebleraria"></div>
+                            <div class="proyecto-imagen"><img src="imagenes/inmuebleraria.png" alt="Inmuebleraria" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Inmuebleraria</h3><p class="tag-empresa">Apex</p></div>
                         </div>
                         <!-- Card 14 -->
                         <div class="proyecto-card">
-                            <div class="proyecto-imagen"><img src="imagenes/Global_Importing.png" alt="Global Importing"></div>
+                            <div class="proyecto-imagen"><img src="imagenes/Global_Importing.png" alt="Global Importing" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Global Importing</h3><p class="tag-empresa">Apex</p></div>
                         </div>
 
@@ -1013,13 +1021,17 @@
                 }
             });
             
-            // Event listener: Mover imagen mientras se arrastra
+            // Event listener: Mover imagen mientras se arrastra (con throttling para rendimiento)
+            let isThrottled = false;
             document.addEventListener('mousemove', function(e) {
-                if (isDragging) {
-                    e.preventDefault();
-                    translateX = e.clientX - startX;
-                    translateY = e.clientY - startY;
-                    updateTransform();
+                if (isDragging && !isThrottled) {
+                    isThrottled = true;
+                    requestAnimationFrame(() => {
+                        translateX = e.clientX - startX;
+                        translateY = e.clientY - startY;
+                        updateTransform();
+                        isThrottled = false;
+                    });
                 }
             });
             
