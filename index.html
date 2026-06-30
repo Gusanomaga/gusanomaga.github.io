@@ -1,21 +1,290 @@
 <!DOCTYPE html>
+<!-- 
+    Portafolio Profesional de Eduardo Sánchez
+    Ingeniero de Sistemas & Full-stack Developer
+    Desarrollado con HTML5, Tailwind CSS y JavaScript nativo
+    Alojado en GitHub Pages
+-->
 <html lang="es">
 <head>
+    <!-- Metadatos del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eduardo Sánchez | Ingeniero de Sistemas & Full-stack Developer</title>
+    
+    <!-- Tailwind CSS CDN para estilos utilitarios -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Estilos personalizados -->
     <style>
+        /* Scroll suave para navegación interna */
         html { scroll-behavior: smooth; }
+        
+        /* Fuente base del documento */
         body { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        
+        /* ========================================
+           ESTILOS DEL CARRUSEL DE PROYECTOS WORDPRESS
+           Carrusel responsive con auto-play y navegación manual
+           ======================================== */
+        .seccion-proyectos {
+            max-width: 7xl;
+            margin: 0 auto;
+            padding: 5rem 1.5rem;
+            border-top: 1px solid rgba(128, 128, 128, 0.37);
+        }
+        
+        .titulo-seccion {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .titulo-seccion {
+                text-align: left;
+            }
+        }
+        
+        .carrusel-contenedor {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .carrusel-ventana {
+            flex: 1;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+        
+        .carrusel-track {
+            display: flex;
+            gap: 1.5rem;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .proyecto-card {
+            flex: 0 0 calc(33.333% - 1rem);
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid rgba(128, 128, 128, 0.37);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .proyecto-card:hover {
+            border-color: rgba(20, 184, 166, 0.5);
+            transform: translateY(-0.25rem);
+            box-shadow: 0 10px 40px rgba(20, 184, 166, 0.2);
+        }
+        
+        .proyecto-imagen {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .proyecto-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .proyecto-card:hover .proyecto-imagen img {
+            transform: scale(1.05);
+        }
+        
+        .proyecto-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .proyecto-info h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+        
+        .tag-empresa {
+            font-size: 0.75rem;
+            color: rgba(20, 184, 166, 0.8);
+            font-weight: 500;
+        }
+        
+        .carrusel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(20, 184, 166, 0.1);
+            color: rgba(20, 184, 166, 1);
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carrusel-btn:hover {
+            background: rgba(20, 184, 166, 1);
+            color: #111;
+        }
+        
+        .carrusel-btn.prev {
+            left: -1.5rem;
+        }
+        
+        .carrusel-btn.next {
+            right: -1.5rem;
+        }
+        
+        /* Responsive: 3 cards en laptop, 2 en tablet, 1 en móvil */
+        @media (min-width: 1024px) {
+            .proyecto-card {
+                flex: 0 0 calc(25% - 1.125rem);
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .proyecto-card {
+                flex: 0 0 calc(50% - 0.75rem);
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .proyecto-card {
+                flex: 0 0 100%;
+            }
+            
+            .carrusel-btn.prev {
+                left: 0.5rem;
+            }
+            
+            .carrusel-btn.next {
+                right: 0.5rem;
+            }
+            
+            .titulo-seccion {
+                font-size: 1.75rem;
+            }
+        }
+        
+        /* ========================================
+           ESTILOS DEL MODAL/LIGHTBOX
+           Modal para visualizar imágenes con zoom y arrastre
+           ======================================== */
+        .modal-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+        
+        .modal-lightbox.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transition: transform 0.1s ease;
+            cursor: zoom-in;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(20, 184, 166, 0.2);
+            color: rgba(20, 184, 166, 1);
+            border: 1px solid rgba(20, 184, 166, 0.4);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .modal-close:hover {
+            background: rgba(20, 184, 166, 1);
+            color: #111;
+        }
+        
+        .modal-info {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            z-index: 1001;
+        }
+        
+        .modal-info h3 {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .modal-info p {
+            color: rgba(20, 184, 166, 0.8);
+            font-size: 0.875rem;
+        }
+        
+        .modal-zoom-hint {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(0, 0, 0, 0.6);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            z-index: 1001;
+        }
     </style>
 </head>
+<!-- Cuerpo principal del documento con tema oscuro -->
 <body class="bg-[#111] text-gray-100 font-sans antialiased overflow-x-hidden">
 
+    <!-- Fondo con gradiente radial decorativo -->
     <div class="fixed inset-0 z-0 bg-radial-at-t from-[#14B8A6]/10 to-[#111] via-[#111]"></div>
 
+    <!-- Contenedor principal con z-index superior al fondo -->
     <div class="relative z-10">
         
+        <!-- ========================================
+           HEADER / CABECERA
+           Presentación personal y navegación principal
+           ======================================== -->
         <header class="max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center justify-between">
             <div class="md:w-3/5 text-center md:text-left">
                 <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-3 tracking-tight">
@@ -48,6 +317,10 @@
             </div>
         </header>
 
+        <!-- ========================================
+           SECCIÓN: SOBRE MÍ
+           Carta de presentación, foto de perfil y datos personales
+           ======================================== -->
         <section id="sobre-mi" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800/60">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
                 
@@ -97,6 +370,10 @@
             </div>
         </section>
 
+        <!-- ========================================
+           SECCIÓN: EDUCACIÓN
+           Formación académica y proyectos de tesis
+           ======================================== -->
         <section id="educacion" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800/60">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 tracking-tight text-center md:text-left">
                 Formación Académica
@@ -130,6 +407,10 @@
             </div>
         </section>
 
+        <!-- ========================================
+           SECCIÓN: HABILIDADES TÉCNICAS
+           Tech Stack organizado por categorías: Backend, Frontend, Bases de Datos, Infraestructura
+           ======================================== -->
         <section id="habilidades" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800/60">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 tracking-tight text-center md:text-left">
                 Habilidades Técnicas & Tech Stack
@@ -189,6 +470,10 @@
             </div>
         </section>
 
+        <!-- ========================================
+           SECCIÓN: PROYECTOS DESTACADOS
+           Proyectos Full-stack más relevantes con descripción técnica
+           ======================================== -->
         <main id="proyectos" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800/60">
             <h2 class="text-4xl font-bold text-white mb-16 text-center md:text-left tracking-tight">
                 Proyectos Destacados
@@ -367,11 +652,391 @@
             </div>
         </main>
 
+        <!-- ========================================
+           SECCIÓN: CARRUSEL DE PROYECTOS WORDPRESS
+           Carrusel responsive con 14 proyectos de WordPress/Elementor
+           Auto-play cada 4 segundos, navegación con flechas
+           ======================================== -->
+        <section id="proyectos-wordpress" class="seccion-proyectos">
+            <h2 class="titulo-seccion">Proyectos WordPress & Elementor (Apex)</h2>
+            
+            <div class="carrusel-contenedor">
+                <!-- Flecha Izquierda -->
+                <button class="carrusel-btn prev" id="btn-prev">&#10094;</button>
+                
+                <!-- Ventana que recorta el contenido visible -->
+                <div class="carrusel-ventana">
+                    <!-- Tira larga que se mueve de izquierda a derecha -->
+                    <div class="carrusel-track" id="carrusel-track">
+                        
+                        <!-- Card 1 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/mesakiel.png" alt="Mesakiel"></div>
+                            <div class="proyecto-info"><h3>Mesakiel</h3><p class="tag-empresa">Apex</p></div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/Mar_Logistic.png" alt="Mar Logistic"></div>
+                            <div class="proyecto-info"><h3>Mar Logistic</h3><p class="tag-empresa">Apex</p></div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/Car_Capital.png" alt="Car Capital"></div>
+                            <div class="proyecto-info"><h3>Car Capital</h3><p class="tag-empresa">Apex</p></div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/vasegurisimo.png" alt="Vasegurisimo"></div>
+                            <div class="proyecto-info"><h3>Vasegurisimo</h3><p class="tag-empresa">Apex</p></div>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/locksta.png" alt="Locksta"></div>
+                            <div class="proyecto-info"><h3>Locksta</h3><p class="tag-empresa">Apex</p></div>
+                        </div>
+                        <!-- Card 6 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/insularmet.png" alt="Insularmet"></div>
+                            <div class="proyecto-info"><h3>Insularmet</h3><p class="tag-empresa">Apex</p></div>
+                        </div>
+                        <!-- Card 7 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/Bodega_Taqueral.png" alt="Bodega Taqueral"></div>
+                            <div class="proyecto-info"><h3>Bodega Taqueral</h3><p class="tag-empresa">Apex</p></div>
+                        </div>
+                        <!-- Card 8 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/velocity.png" alt="Velocity"></div>
+                            <div class="proyecto-info"><h3>Velocity</h3><p class="tag-empresa">Apex</p></div>
+                        </div>
+                        <!-- Card 9 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/Mrs_Bun.png" alt="Mrs Bun"></div>
+                            <div class="proyecto-info"><h3>Mrs Bun</h3><p class="tag-empresa">Apex</p></div>
+                        </div>
+                        <!-- Card 10 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/farmadepot.png" alt="Farmadepot"></div>
+                            <div class="proyecto-info"><h3>Farmadepot</h3><p class="tag-empresa">Apex</p></div>
+                        </div>
+                        <!-- Card 11 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/Reto_Caribe.png" alt="Reto Caribe"></div>
+                            <div class="proyecto-info"><h3>Reto Caribe</h3><p class="tag-empresa">Apex</p></div>
+                        </div>
+                        <!-- Card 12 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/Luxe_Health.png" alt="Luxe Health"></div>
+                            <div class="proyecto-info"><h3>Luxe Health</h3><p class="tag-empresa">Apex</p></div>
+                        </div>
+                        <!-- Card 13 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/inmuebleraria.png" alt="Inmuebleraria"></div>
+                            <div class="proyecto-info"><h3>Inmuebleraria</h3><p class="tag-empresa">Apex</p></div>
+                        </div>
+                        <!-- Card 14 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/Global_Importing.png" alt="Global Importing"></div>
+                            <div class="proyecto-info"><h3>Global Importing</h3><p class="tag-empresa">Apex</p></div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <!-- Flecha Derecha -->
+                <button class="carrusel-btn next" id="btn-next">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- ========================================
+           FOOTER / PIE DE PÁGINA
+           Información de copyright y créditos
+           ======================================== -->
         <footer class="max-w-7xl mx-auto px-6 py-10 text-center border-t border-gray-800/60 mt-20 text-sm text-gray-600">
             <p>&copy; 2026 Eduardo Sánchez. Desarrollado con Tailwind CSS & alojado en GitHub Pages.</p>
         </footer>
 
     </div>
+
+    <!-- ========================================
+       MODAL/LIGHTBOX
+       Componente para visualizar imágenes en pantalla completa
+       Con funcionalidad de zoom (rueda del mouse) y arrastre
+       ======================================== -->
+    <div class="modal-lightbox" id="modal-lightbox">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <div class="modal-zoom-hint">Usa la rueda del mouse para zoom • Click para cerrar</div>
+        <img class="modal-content" id="modal-image" src="" alt="">
+        <div class="modal-info">
+            <h3 id="modal-title"></h3>
+            <p id="modal-empresa"></p>
+        </div>
+    </div>
+
+    <!-- ========================================
+       JAVASCRIPT
+       Lógica interactiva del carrusel y modal/lightbox
+       ======================================== -->
+    <script>
+        /* ========================================
+           LÓGICA DEL CARRUSEL DE PROYECTOS WORDPRESS
+           - Auto-play cada 4 segundos
+           - Navegación manual con flechas
+           - Responsive: 4 cards (desktop), 2 (tablet), 1 (móvil)
+           - Pausa al pasar el mouse
+           ======================================== */
+        document.addEventListener('DOMContentLoaded', function() {
+            // Referencias a elementos del DOM
+            const track = document.getElementById('carrusel-track');
+            const btnPrev = document.getElementById('btn-prev');
+            const btnNext = document.getElementById('btn-next');
+            
+            // Validar que los elementos existan
+            if (!track || !btnPrev || !btnNext) return;
+            
+            // Variables de estado
+            const cards = document.querySelectorAll('.proyecto-card');
+            const totalCards = cards.length;
+            let currentIndex = 0;
+            let autoPlayInterval;
+            
+            // Determinar cuántas tarjetas se muestran según el tamaño de pantalla
+            function getCardsPerView() {
+                if (window.innerWidth >= 1024) return 4;
+                if (window.innerWidth >= 768) return 2;
+                return 1;
+            }
+            
+            // Calcular el ancho de cada tarjeta incluyendo el gap (espaciado)
+            function getCardWidth() {
+                const card = cards[0];
+                const cardStyle = window.getComputedStyle(card);
+                const gap = window.getComputedStyle(track).gap;
+                const gapValue = parseFloat(gap) || 0;
+                return card.offsetWidth + gapValue;
+            }
+            
+            // Mover el carrusel a una posición específica con animación
+            function moveToIndex(index) {
+                const cardsPerView = getCardsPerView();
+                const maxIndex = Math.max(0, totalCards - cardsPerView);
+                
+                if (index < 0) {
+                    currentIndex = maxIndex;
+                } else if (index > maxIndex) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex = index;
+                }
+                
+                const cardWidth = getCardWidth();
+                const translateX = -(currentIndex * cardWidth);
+                track.style.transform = `translateX(${translateX}px)`;
+            }
+            
+            // Event listener: Botón anterior (flecha izquierda)
+            btnPrev.addEventListener('click', function() {
+                moveToIndex(currentIndex - 1);
+                resetAutoPlay();
+            });
+            
+            // Event listener: Botón siguiente (flecha derecha)
+            btnNext.addEventListener('click', function() {
+                moveToIndex(currentIndex + 1);
+                resetAutoPlay();
+            });
+            
+            // Iniciar auto-play: avanza automáticamente cada 4 segundos
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(() => {
+                    moveToIndex(currentIndex + 1);
+                }, 4000);
+            }
+            
+            // Reiniciar el temporizador de auto-play (usado después de navegación manual)
+            function resetAutoPlay() {
+                clearInterval(autoPlayInterval);
+                startAutoPlay();
+            }
+            
+            // Pausar auto-play cuando el mouse está sobre el carrusel
+            const carouselContainer = document.querySelector('.carrusel-contenedor');
+            carouselContainer.addEventListener('mouseenter', () => {
+                clearInterval(autoPlayInterval);
+            });
+            
+            // Reanudar auto-play cuando el mouse sale del carrusel
+            carouselContainer.addEventListener('mouseleave', () => {
+                startAutoPlay();
+            });
+            
+            // Iniciar auto-play al cargar la página
+            startAutoPlay();
+            
+            // Recalcular posiciones al cambiar tamaño de ventana
+            window.addEventListener('resize', () => {
+                moveToIndex(currentIndex);
+            });
+        });
+        
+        /* ========================================
+           LÓGICA DEL MODAL/LIGHTBOX CON ZOOM
+           - Click en tarjeta: abre modal con imagen
+           - Rueda del mouse: zoom hacia la posición del cursor (0.5x a 5x)
+           - Click mantenido + arrastre: mover imagen cuando está en zoom
+           - Doble click: resetear zoom al 100%
+           - Tecla Escape: cerrar modal
+           ======================================== */
+        document.addEventListener('DOMContentLoaded', function() {
+            // Referencias a elementos del DOM del modal
+            const modal = document.getElementById('modal-lightbox');
+            const modalImage = document.getElementById('modal-image');
+            const modalTitle = document.getElementById('modal-title');
+            const modalEmpresa = document.getElementById('modal-empresa');
+            const modalClose = document.getElementById('modal-close');
+            const cards = document.querySelectorAll('.proyecto-card');
+            
+            // Variables de estado para zoom y arrastre
+            let currentZoom = 1;
+            const minZoom = 0.5;
+            const maxZoom = 5;
+            let translateX = 0;
+            let translateY = 0;
+            let isDragging = false;
+            let startX, startY;
+            
+            // Abrir modal al hacer click en una tarjeta del carrusel
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const img = this.querySelector('img');
+                    const title = this.querySelector('h3').textContent;
+                    const empresa = this.querySelector('.tag-empresa').textContent;
+                    
+                    modalImage.src = img.src;
+                    modalTitle.textContent = title;
+                    modalEmpresa.textContent = empresa;
+                    currentZoom = 1;
+                    translateX = 0;
+                    translateY = 0;
+                    updateTransform();
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Actualizar la transformación CSS de la imagen (zoom + posición)
+            function updateTransform() {
+                modalImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentZoom})`;
+            }
+            
+            // Cerrar modal y resetear estado al valor inicial
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                currentZoom = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+            }
+            
+            // Event listener: Cerrar modal al hacer click en el botón X
+            modalClose.addEventListener('click', closeModal);
+            
+            // Event listener: Cerrar modal al hacer click fuera de la imagen
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal || e.target.classList.contains('modal-info')) {
+                    closeModal();
+                }
+            });
+            
+            // Event listener: Cerrar modal con tecla Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+            
+            // Event listener: Zoom con rueda del mouse hacia la posición del cursor
+            modalImage.addEventListener('wheel', function(e) {
+                e.preventDefault();
+                
+                const rect = modalImage.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                
+                const delta = e.deltaY > 0 ? -0.1 : 0.1;
+                const newZoom = Math.min(Math.max(currentZoom + delta, minZoom), maxZoom);
+                
+                if (newZoom !== currentZoom) {
+                    const zoomRatio = newZoom / currentZoom;
+                    
+                    // Calcular nueva posición para mantener el punto bajo el cursor
+                    translateX = mouseX - (mouseX - translateX) * zoomRatio;
+                    translateY = mouseY - (mouseY - translateY) * zoomRatio;
+                    
+                    currentZoom = newZoom;
+                    updateTransform();
+                }
+            });
+            
+            // Event listener: Zoom al hacer click en la imagen (hacia la posición del click)
+            modalImage.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (currentZoom === 1) {
+                    currentZoom = 2;
+                    // Centrar en el punto del click
+                    const rect = modalImage.getBoundingClientRect();
+                    const mouseX = e.clientX - rect.left;
+                    const mouseY = e.clientY - rect.top;
+                    translateX = mouseX - mouseX * 2;
+                    translateY = mouseY - mouseY * 2;
+                    updateTransform();
+                }
+            });
+            
+            // Event listener: Doble click para resetear zoom al 100%
+            modalImage.addEventListener('dblclick', function(e) {
+                e.stopPropagation();
+                currentZoom = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+            });
+            
+            // Event listener: Iniciar arrastre al presionar el mouse (solo si hay zoom)
+            modalImage.addEventListener('mousedown', function(e) {
+                if (currentZoom > 1) {
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    modalImage.style.cursor = 'grabbing';
+                }
+            });
+            
+            // Event listener: Mover imagen mientras se arrastra
+            document.addEventListener('mousemove', function(e) {
+                if (isDragging) {
+                    e.preventDefault();
+                    translateX = e.clientX - startX;
+                    translateY = e.clientY - startY;
+                    updateTransform();
+                }
+            });
+            
+            // Event listener: Finalizar arrastre al soltar el mouse
+            document.addEventListener('mouseup', function() {
+                if (isDragging) {
+                    isDragging = false;
+                    modalImage.style.cursor = currentZoom > 1 ? 'grab' : 'zoom-in';
+                }
+            });
+            
+            // Event listener: Cambiar cursor según el estado de zoom
+            modalImage.addEventListener('mouseenter', function() {
+                modalImage.style.cursor = currentZoom > 1 ? 'grab' : 'zoom-in';
+            });
+        });
+    </script>
 
 </body>
 </html>
