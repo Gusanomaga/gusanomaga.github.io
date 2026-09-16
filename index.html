@@ -663,11 +663,11 @@
 
         <!-- ========================================
            SECCIÓN: CARRUSEL DE PROYECTOS WORDPRESS
-           Carrusel responsive con 14 proyectos de WordPress/Elementor
+           Carrusel responsive con 16 proyectos de WordPress/Elementor
            Auto-play cada 4 segundos, navegación con flechas
            ======================================== -->
         <section id="proyectos-wordpress" class="seccion-proyectos">
-            <h2 class="titulo-seccion">Proyectos WordPress & Elementor (Apex)</h2>
+            <h2 class="titulo-seccion">Proyectos WordPress & Elementor</h2>
             
             <div class="carrusel-contenedor">
                 <!-- Flecha Izquierda -->
@@ -748,12 +748,78 @@
                             <div class="proyecto-imagen"><img src="imagenes/Global_Importing.png" alt="Global Importing" loading="lazy"></div>
                             <div class="proyecto-info"><h3>Global Importing</h3><p class="tag-empresa">Apex</p></div>
                         </div>
+                        <!-- Card 15 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/elolivodemazo.png" alt="La Palma" loading="lazy"></div>
+                            <div class="proyecto-info"><h3>La Palma</h3><p class="tag-empresa">Sumaweb</p></div>
+                        </div>
+                        <!-- Card 16 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/smlrootsacademy.png" alt="SML Roots Academy" loading="lazy"></div>
+                            <div class="proyecto-info"><h3>SML Roots Academy</h3><p class="tag-empresa">Sumaweb</p></div>
+                        </div>
 
                     </div>
                 </div>
                 
                 <!-- Flecha Derecha -->
                 <button class="carrusel-btn next" id="btn-next">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- ========================================
+           SECCIÓN: CARRUSEL DE PROYECTOS SHOPIFY
+           Carrusel responsive con 6 proyectos de Shopify
+           Auto-play cada 4 segundos, navegación con flechas
+           ======================================== -->
+        <section id="proyectos-shopify" class="seccion-proyectos">
+            <h2 class="titulo-seccion">Proyectos Shopify</h2>
+            
+            <div class="carrusel-contenedor">
+                <!-- Flecha Izquierda -->
+                <button class="carrusel-btn prev" id="btn-prev-shopify">&#10094;</button>
+                
+                <!-- Ventana que recorta el contenido visible -->
+                <div class="carrusel-ventana">
+                    <!-- Tira larga que se mueve de izquierda a derecha -->
+                    <div class="carrusel-track" id="carrusel-track-shopify">
+                        
+                        <!-- Card 1 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/salumex.png" alt="Salumex" loading="lazy"></div>
+                            <div class="proyecto-info"><h3>Salumex</h3><p class="tag-empresa">Digitales en Accion Marketing</p></div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/medipepti.png" alt="Medipepti" loading="lazy"></div>
+                            <div class="proyecto-info"><h3>Medipepti</h3><p class="tag-empresa">Digitales en Accion Marketing</p></div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/Guita.png" alt="Guita" loading="lazy"></div>
+                            <div class="proyecto-info"><h3>Guita</h3><p class="tag-empresa">Digitales en Accion Marketing</p></div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/Globalsupply.png" alt="Globalsupply" loading="lazy"></div>
+                            <div class="proyecto-info"><h3>Globalsupply</h3><p class="tag-empresa">Digitales en Accion Marketing</p></div>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/elynovafit.png" alt="ELYNOVA" loading="lazy"></div>
+                            <div class="proyecto-info"><h3>ELYNOVA</h3><p class="tag-empresa">Digitales en Accion Marketing</p></div>
+                        </div>
+                        <!-- Card 6 -->
+                        <div class="proyecto-card">
+                            <div class="proyecto-imagen"><img src="imagenes/shopvoltia.png" alt="Voltia" loading="lazy"></div>
+                            <div class="proyecto-info"><h3>Voltia</h3><p class="tag-empresa">Digitales en Accion Marketing</p></div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <!-- Flecha Derecha -->
+                <button class="carrusel-btn next" id="btn-next-shopify">&#10095;</button>
             </div>
         </section>
 
@@ -788,23 +854,24 @@
        ======================================== -->
     <script>
         /* ========================================
-           LÓGICA DEL CARRUSEL DE PROYECTOS WORDPRESS
+           LÓGICA DEL CARRUSEL DE PROYECTOS
+           Función reutilizable para inicializar múltiples carruseles
            - Auto-play cada 4 segundos
            - Navegación manual con flechas
            - Responsive: 4 cards (desktop), 2 (tablet), 1 (móvil)
            - Pausa al pasar el mouse
            ======================================== */
-        document.addEventListener('DOMContentLoaded', function() {
+        function initCarousel(trackId, prevBtnId, nextBtnId) {
             // Referencias a elementos del DOM
-            const track = document.getElementById('carrusel-track');
-            const btnPrev = document.getElementById('btn-prev');
-            const btnNext = document.getElementById('btn-next');
+            const track = document.getElementById(trackId);
+            const btnPrev = document.getElementById(prevBtnId);
+            const btnNext = document.getElementById(nextBtnId);
             
             // Validar que los elementos existan
             if (!track || !btnPrev || !btnNext) return;
             
             // Variables de estado
-            const cards = document.querySelectorAll('.proyecto-card');
+            const cards = track.querySelectorAll('.proyecto-card');
             const totalCards = cards.length;
             let currentIndex = 0;
             let autoPlayInterval;
@@ -869,7 +936,7 @@
             }
             
             // Pausar auto-play cuando el mouse está sobre el carrusel
-            const carouselContainer = document.querySelector('.carrusel-contenedor');
+            const carouselContainer = track.closest('.carrusel-contenedor');
             carouselContainer.addEventListener('mouseenter', () => {
                 clearInterval(autoPlayInterval);
             });
@@ -886,6 +953,12 @@
             window.addEventListener('resize', () => {
                 moveToIndex(currentIndex);
             });
+        }
+        
+        // Inicializar ambos carruseles al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            initCarousel('carrusel-track', 'btn-prev', 'btn-next');
+            initCarousel('carrusel-track-shopify', 'btn-prev-shopify', 'btn-next-shopify');
         });
         
         /* ========================================
